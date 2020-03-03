@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FastColoredTextBoxNS;
 using MetroFramework;
+using OLC1_Proyecto_1.Controlador;
 
 namespace OLC1_Proyecto_1
 {
@@ -39,8 +40,15 @@ namespace OLC1_Proyecto_1
             var tabPage = new TabPage("Pestaña No. " + tabContador);
             tabControl1.Controls.Add(tabPage);
             var fastColoredTextBox = new FastColoredTextBox();
-            fastColoredTextBox.Width = 700;
-            fastColoredTextBox.Height = 465;
+            fastColoredTextBox.Width = 555;
+            fastColoredTextBox.Height = 312;
+            fastColoredTextBox.BackColor = Color.FromArgb(34,34,34);
+            fastColoredTextBox.IndentBackColor = Color.FromArgb(34, 34, 34);
+            fastColoredTextBox.ForeColor = Color.White;
+            fastColoredTextBox.Font = new Font("Consolas", 10);
+            System.Drawing.Font currentFont = fastColoredTextBox.Font;
+            FontStyle newFontStyle = (FontStyle)(currentFont.Style | FontStyle.Regular);
+            fastColoredTextBox.Font = new System.Drawing.Font(currentFont.FontFamily, 10, newFontStyle);
             tabPage.Controls.Add(fastColoredTextBox);
         }
 
@@ -199,6 +207,16 @@ namespace OLC1_Proyecto_1
         {
             MessageBox.Show(mensaje, "Error",
             MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void reporteDeTokensToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ControladorXML.Instancia.ReporteTokenXML();
+        }
+
+        private void reporteDeErrorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ControladorXML.Instancia.ReporteErrorXML();
         }
     }
 }
