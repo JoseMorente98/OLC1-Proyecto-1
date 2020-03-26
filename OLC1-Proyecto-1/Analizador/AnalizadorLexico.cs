@@ -111,7 +111,7 @@ namespace OLC1_Proyecto_1.Analizador
                                     ControladorToken.Instancia.AgregarToken(row, column - 1, letra.ToString(), "TK_Resta");
                                     break;
                                 default:
-                                    ControladorToken.Instancia.agregarError(row, column, letra.ToString(), "TD_Desconocido");
+                                    ControladorToken.Instancia.AgregarError(row, column, letra.ToString(), "TD_Desconocido");
                                     break;
                             }
                         }
@@ -182,13 +182,13 @@ namespace OLC1_Proyecto_1.Analizador
                                     ControladorToken.Instancia.AgregarToken(row, column - 1, letra.ToString(), "TK_Simbolo");
                                     break;
                                 default:
-                                    ControladorToken.Instancia.agregarError(row, column, letra.ToString(), "TD_Desconocido");
+                                    ControladorToken.Instancia.AgregarError(row, column, letra.ToString(), "TD_Desconocido");
                                     break;
                             }
                         }
                         else
                         {
-                            ControladorToken.Instancia.agregarError(row, column, letra.ToString(), "TD_Desconocido");
+                            ControladorToken.Instancia.AgregarError(row, column, letra.ToString(), "TD_Desconocido");
                         }
                         break;
                     case 1:
@@ -309,7 +309,7 @@ namespace OLC1_Proyecto_1.Analizador
                         }
                         break;
                     default:
-                        ControladorToken.Instancia.agregarError(row, column, letra.ToString(), "TD_Desconocido");
+                        ControladorToken.Instancia.AgregarError(row, column, letra.ToString(), "TD_Desconocido");
                         break;
                 }
             }
