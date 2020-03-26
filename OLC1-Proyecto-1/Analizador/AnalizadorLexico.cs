@@ -24,214 +24,209 @@ namespace OLC1_Proyecto_1.Analizador
             }
         }
 
-        public void Scanner(String textInput)
+        public void Scanner(String entrada)
         {
-            int state = 0;
-            int column = 0;
+            int estado = 0;
+            int columna = 0;
             int row = 1; ;
 
-            for (int i = 0; i < textInput.Length; i++)
+            for (int i = 0; i < entrada.Length; i++)
             {
-                char letra = textInput[i];
-                column++;
+                char letra = entrada[i];
+                columna++;
 
-                //System.err.println(letra);
-                switch (state)
+                switch (estado)
                 {
                     case 0:
                         //SI VIENE LETRA
-                        //System.out.println("ESTADO 0");
                         if (char.IsLetter(letra))
                         {
-                            state = 1;
+                            estado = 1;
                             auxiliar += letra;
-                            //SI VIENE SALTO DE LINEA
                         }
+                        //SI VIENE SALTO DE LINEA
                         else if (letra == '\n')
                         {
-                            state = 0;
-                            column = 0;//COLUMNA 0
+                            estado = 0;
+                            columna = 0;//COLUMNA 0
                             row++; //FILA INCREMENTA
 
                         }
                         //VERIFICA ESPACIOS EN BLANCO
                         else if (char.IsWhiteSpace(letra))
                         {
-                            //column++;
-                            state = 0;
+                            estado = 0;
                             //VERIFICA SI VIENE NUMERO
                         }
                         else if (char.IsDigit(letra))
                         {
-                            state = 2;
+                            estado = 2;
                             auxiliar += letra;
                         }
-
                         //VERIFICA SI ES PUNTUACION
                         else if (char.IsPunctuation(letra))
                         {
                             switch (letra)
                             {
                                 case '.':
-                                    ControladorToken.Instancia.AgregarToken(row, column - 1, letra.ToString(), "TK_Punto");
+                                    ControladorToken.Instancia.AgregarToken(row, columna - 1, letra.ToString(), "TK_Punto");
                                     break;
                                 case ',':
-                                    ControladorToken.Instancia.AgregarToken(row, column - 1, letra.ToString(), "TK_Coma");
+                                    ControladorToken.Instancia.AgregarToken(row, columna - 1, letra.ToString(), "TK_Coma");
                                     break;
                                 case ':':
-                                    ControladorToken.Instancia.AgregarToken(row, column - 1, letra.ToString(), "TK_DosPuntos");
+                                    ControladorToken.Instancia.AgregarToken(row, columna - 1, letra.ToString(), "TK_DosPuntos");
                                     break;
                                 case ';':
-                                    ControladorToken.Instancia.AgregarToken(row, column - 1, letra.ToString(), "TK_PuntoComa");
+                                    ControladorToken.Instancia.AgregarToken(row, columna - 1, letra.ToString(), "TK_PuntoComa");
                                     break;
                                 case '{':
-                                    ControladorToken.Instancia.AgregarToken(row, column - 1, letra.ToString(), "TK_LlaveIzquierda");
+                                    ControladorToken.Instancia.AgregarToken(row, columna - 1, letra.ToString(), "TK_LlaveIzquierda");
                                     break;
                                 case '}':
-                                    ControladorToken.Instancia.AgregarToken(row, column - 1, letra.ToString(), "TK_LlaveDerecha");
+                                    ControladorToken.Instancia.AgregarToken(row, columna - 1, letra.ToString(), "TK_LlaveDerecha");
+                                    break;
+                                case '[':
+                                    Console.WriteLine("entro");
+                                    estado = 11;
+                                    break;
+                                case ']':
+                                    ControladorToken.Instancia.AgregarToken(row, columna - 1, letra.ToString(), "TK_Corchete_Der");
                                     break;
                                 case '?':
-                                    ControladorToken.Instancia.AgregarToken(row, column - 1, letra.ToString(), "TK_Simbolo");
+                                    ControladorToken.Instancia.AgregarToken(row, columna - 1, letra.ToString(), "TK_Interrogacion");
                                     break;
                                 case '%':
-                                    ControladorToken.Instancia.AgregarToken(row, column - 1, letra.ToString(), "TK_Porcentaje");
+                                    ControladorToken.Instancia.AgregarToken(row, columna - 1, letra.ToString(), "TK_Porcentaje");
                                     break;
                                 case '*':
-                                    ControladorToken.Instancia.AgregarToken(row, column - 1, letra.ToString(), "TK_Multiplicacion");
+                                    ControladorToken.Instancia.AgregarToken(row, columna - 1, letra.ToString(), "TK_Multiplicacion");
+                                    break;
+                                case '\\':
+                                    estado = 10;
+                                    auxiliar += letra;
                                     break;
                                 case '/':
-                                    state = 3;
+                                    estado = 3;
                                     auxiliar += letra;
                                     break;
                                 case '"':
-                                    state = 8;
+                                    estado = 8;
                                     auxiliar += letra;
                                     break;
                                 case '-':
-                                    ControladorToken.Instancia.AgregarToken(row, column - 1, letra.ToString(), "TK_Resta");
+                                    ControladorToken.Instancia.AgregarToken(row, columna - 1, letra.ToString(), "TK_Resta");
                                     break;
                                 default:
-                                    ControladorToken.Instancia.AgregarError(row, column, letra.ToString(), "TD_Desconocido");
+                                    ControladorToken.Instancia.AgregarError(row, columna, letra.ToString(), "TD_Desconocido");
                                     break;
                             }
                         }
 
                         //VERIFICA SI ES SIMBOLO
-                        else if (char.IsSymbol(letra)) // ANTES ESTABA isDefined
+                        else if (char.IsSymbol(letra))
                         {
                             switch (letra)
                             {
                                 case '>':
-                                    //System.out.println("ENTRA A >");
-                                    ControladorToken.Instancia.AgregarToken(row, column - 1, letra.ToString(), "TK_Mayor");
+                                    ControladorToken.Instancia.AgregarToken(row, columna - 1, letra.ToString(), "TK_Mayor");
                                     break;
                                 case '~':
-                                    ControladorToken.Instancia.AgregarToken(row, column - 1, letra.ToString(), "TK_Virgulilla");
+                                    ControladorToken.Instancia.AgregarToken(row, columna - 1, letra.ToString(), "TK_Virgulilla");
                                     break;
                                 case '+':
-                                    ControladorToken.Instancia.AgregarToken(row, column - 1, letra.ToString(), "TK_Suma");
+                                    ControladorToken.Instancia.AgregarToken(row, columna - 1, letra.ToString(), "TK_Suma");
                                     break;
-
                                 case '|':
-                                    ControladorToken.Instancia.AgregarToken(row, column - 1, letra.ToString(), "TK_Pleca");
+                                    ControladorToken.Instancia.AgregarToken(row, columna - 1, letra.ToString(), "TK_Pleca");
                                     break;
-
-
                                 case '<':
-                                    state = 5;
+                                    estado = 5;
                                     auxiliar += letra;
-                                    Console.WriteLine("ESTADO 5");
                                     break;
-
                                 /*SIMBOLOS ASCII*/
                                 case '!':
-                                    ControladorToken.Instancia.AgregarToken(row, column - 1, letra.ToString(), "TK_Simbolo");
+                                    ControladorToken.Instancia.AgregarToken(row, columna - 1, letra.ToString(), "TK_Exclamacion");
                                     break;
                                 case '#':
-                                    ControladorToken.Instancia.AgregarToken(row, column - 1, letra.ToString(), "TK_Simbolo");
+                                    ControladorToken.Instancia.AgregarToken(row, columna - 1, letra.ToString(), "TK_Numeral");
                                     break;
                                 case '$':
-                                    ControladorToken.Instancia.AgregarToken(row, column - 1, letra.ToString(), "TK_Simbolo");
+                                    ControladorToken.Instancia.AgregarToken(row, columna - 1, letra.ToString(), "TK_Simbolo_Dolar");
                                     break;
                                 case '&':
-                                    ControladorToken.Instancia.AgregarToken(row, column - 1, letra.ToString(), "TK_Simbolo");
+                                    ControladorToken.Instancia.AgregarToken(row, columna - 1, letra.ToString(), "TK_&");
                                     break;
                                 case '(':
-                                    ControladorToken.Instancia.AgregarToken(row, column - 1, letra.ToString(), "TK_Simbolo");
+                                    ControladorToken.Instancia.AgregarToken(row, columna - 1, letra.ToString(), "TK_Parentesis_Izq");
                                     break;
                                 case ')':
-                                    ControladorToken.Instancia.AgregarToken(row, column - 1, letra.ToString(), "TK_Simbolo");
+                                    ControladorToken.Instancia.AgregarToken(row, columna - 1, letra.ToString(), "TK_Parentesis_Der");
                                     break;
                                 case '=':
-                                    ControladorToken.Instancia.AgregarToken(row, column - 1, letra.ToString(), "TK_Simbolo");
+                                    ControladorToken.Instancia.AgregarToken(row, columna - 1, letra.ToString(), "TK_Igual");
+                                    break;
+                                case '@':
+                                    ControladorToken.Instancia.AgregarToken(row, columna - 1, letra.ToString(), "TK_Arroba");
                                     break;
 
-                                case '@':
-                                    ControladorToken.Instancia.AgregarToken(row, column - 1, letra.ToString(), "TK_Simbolo");
-                                    break;
-                                case '[':
-                                    ControladorToken.Instancia.AgregarToken(row, column - 1, letra.ToString(), "TK_Simbolo");
-                                    break;
-                                case ']':
-                                    ControladorToken.Instancia.AgregarToken(row, column - 1, letra.ToString(), "TK_Simbolo");
-                                    break;
                                 case '^':
-                                    ControladorToken.Instancia.AgregarToken(row, column - 1, letra.ToString(), "TK_Simbolo");
+                                    ControladorToken.Instancia.AgregarToken(row, columna - 1, letra.ToString(), "TK_Simbolo");
                                     break;
                                 case '_':
-                                    ControladorToken.Instancia.AgregarToken(row, column - 1, letra.ToString(), "TK_Simbolo");
+                                    ControladorToken.Instancia.AgregarToken(row, columna - 1, letra.ToString(), "TK_Guion_Bajo");
                                     break;
                                 default:
-                                    ControladorToken.Instancia.AgregarError(row, column, letra.ToString(), "TD_Desconocido");
+                                    ControladorToken.Instancia.AgregarError(row, columna, letra.ToString(), "TD_Desconocido");
                                     break;
                             }
                         }
                         else
                         {
-                            ControladorToken.Instancia.AgregarError(row, column, letra.ToString(), "TD_Desconocido");
+                            ControladorToken.Instancia.AgregarError(row, columna, letra.ToString(), "TD_Desconocido");
                         }
                         break;
                     case 1:
                         if (char.IsLetterOrDigit(letra) || letra == '_')
                         {
                             auxiliar += letra;
-                            state = 1;
+                            estado = 1;
                         }
                         else
                         {
                             if (auxiliar.Equals("CONJ"))
                             {
-                                ControladorToken.Instancia.AgregarToken(row, (column - auxiliar.Length - 1), auxiliar, "PR_" + auxiliar);
+                                ControladorToken.Instancia.AgregarToken(row, (columna - auxiliar.Length - 1), auxiliar, "PR_" + auxiliar);
                             }
                             else
                             {
-                                ControladorToken.Instancia.AgregarToken(row, (column - auxiliar.Length - 1), auxiliar, "Identificador");
+                                ControladorToken.Instancia.AgregarToken(row, (columna - auxiliar.Length - 1), auxiliar, "Identificador");
                             }
                             auxiliar = "";
                             i--;
-                            column--;
-                            state = 0;
+                            columna--;
+                            estado = 0;
                         }
                         break;
                     case 2:
                         if (char.IsDigit(letra))
                         {
                             auxiliar += letra;
-                            state = 2;
+                            estado = 2;
                         }
                         else
                         {
-                            ControladorToken.Instancia.AgregarToken(row, column, auxiliar, "Digito");
+                            ControladorToken.Instancia.AgregarToken(row, columna, auxiliar, "Digito");
                             auxiliar = "";
                             i--;
-                            column--;
-                            state = 0;
+                            columna--;
+                            estado = 0;
                         }
                         break;
                     case 3:
                         if (letra == '/')
                         {
-                            state = 4;
+                            estado = 4;
                             auxiliar += letra;
                         }
                         break;
@@ -239,13 +234,13 @@ namespace OLC1_Proyecto_1.Analizador
                         if (letra != '\n')
                         {
                             auxiliar += letra;
-                            state = 4;
+                            estado = 4;
                         }
                         else
                         {
                             ControladorToken.Instancia.AgregarToken(row, 0, auxiliar, "ComentarioLinea");
-                            row++; column = 0;
-                            state = 0;
+                            row++; columna = 0;
+                            estado = 0;
                             auxiliar = "";
                         }
                         break;
@@ -253,63 +248,124 @@ namespace OLC1_Proyecto_1.Analizador
 
                         if (letra == '!')
                         {
-                            state = 6;
+                            estado = 6;
                             auxiliar += letra;
                         }
                         break;
                     case 6:
                         if (letra != '!')
                         {
-                            if (letra == '\n') { row++; column = 0; }
+                            if (letra == '\n') { row++; columna = 0; }
                             auxiliar += letra;
-                            state = 6;
-                            /*System.err.println("ESTADO 5");
-                            System.err.println(auxiliar);*/
+                            estado = 6;
                         }
                         else
                         {
                             auxiliar += letra;
-                            state = 7;
-                            /*System.err.println("ESTADO 7");
-                            System.err.println(auxiliar);*/
+                            estado = 7;
                         }
                         break;
                     case 7:
                         if (letra == '>')
                         {
                             auxiliar += letra;
-                            //                        System.err.println("ESTADO 7");
-                            //                        System.err.println(auxiliar);
-                            ControladorToken.Instancia.AgregarToken(row, column, auxiliar, "ComentarioMultilinea");
-                            //row++; column = 0;
-                            state = 0;
+                            ControladorToken.Instancia.AgregarToken(row, columna, auxiliar, "ComentarioMultilinea");
+                            estado = 0;
                             auxiliar = "";
                         }
                         break;
                     case 8:
                         if (letra != '"')
                         {
-                            if (letra == '\n') { row++; column = 0; }
+                            if (letra == '\n') { row++; columna = 0; }
                             auxiliar += letra;
-                            state = 8;
+                            estado = 8;
                         }
                         else
                         {
-                            state = 9;
+                            estado = 9;
                             auxiliar += letra;
-                            i--; column--;
+                            i--; columna--;
                         }
                         break;
                     case 9:
                         if (letra == '"')
                         {
-                            ControladorToken.Instancia.AgregarToken(row, (column - auxiliar.Length), auxiliar, "Cadena");
-                            state = 0;
+                            ControladorToken.Instancia.AgregarToken(row, (columna - auxiliar.Length), auxiliar, "Cadena");
+                            estado = 0;
                             auxiliar = "";
                         }
                         break;
+                    case 10:
+                        estado = 0;
+                        if (letra == 't')
+                        {
+                            auxiliar += letra;
+                            ControladorToken.Instancia.AgregarToken(row, (columna - auxiliar.Length), ('\t').ToString(), "TK_Tabulacion");
+                            auxiliar = "";
+                            break;
+                        }
+                        else if (letra == '"')
+                        {
+                            auxiliar += letra;
+                            ControladorToken.Instancia.AgregarToken(row, (columna - auxiliar.Length), ('\"').ToString(), "TK_Comilla_Doble");
+                            auxiliar = "";
+                            break;
+                        }
+                        else if (letra == 'n' || letra == 'r')
+                        {
+                            auxiliar += letra;
+                            Console.WriteLine(auxiliar);
+                            ControladorToken.Instancia.AgregarToken(row, (columna - auxiliar.Length), ('\n').ToString(), "TK_Salto_Linea");
+                            auxiliar = "";
+                            break;
+                        }
+                        if (letra.ToString().Equals("'"))
+                        {
+                            auxiliar += letra;
+                            ControladorToken.Instancia.AgregarToken(row, (columna - auxiliar.Length), ('\'').ToString(), "TK_Comilla_Simple");
+                            auxiliar = "";
+                            break;
+                        }
+                        else
+                        {
+                            ControladorToken.Instancia.AgregarToken(row, (columna - auxiliar.Length), auxiliar, "TD_Desconocido");
+                            auxiliar = "";
+                            break;
+                        }
+
+                    case 11:
+                        if (letra != ':')
+                        {
+                            ControladorToken.Instancia.AgregarToken(row, columna - 1, "[", "TK_Corchete_Izq");
+                            auxiliar = "";
+                            estado = 0;
+                        }
+                        else
+                        {
+                            auxiliar += "\"";
+                            estado = 12;
+                        }
+                        break;
+                    case 12:
+                        if (letra != ':')
+                        {
+                            if (letra == '\n') { row++; columna = 0; }
+                            if (letra == '\t') { columna++; }
+                            auxiliar += letra;
+                            estado = 12;
+                        }
+                        else
+                        {
+                            auxiliar += "\"";
+                            ControladorToken.Instancia.AgregarToken(row, (columna - auxiliar.Length), auxiliar, "Cadena_TODO");
+                            estado = 0;
+                            auxiliar = "";
+                            i = i + 1;
+                        }
+                        break;
                     default:
-                        ControladorToken.Instancia.AgregarError(row, column, letra.ToString(), "TD_Desconocido");
+                        ControladorToken.Instancia.AgregarError(row, columna, letra.ToString(), "TD_Desconocido");
                         break;
                 }
             }

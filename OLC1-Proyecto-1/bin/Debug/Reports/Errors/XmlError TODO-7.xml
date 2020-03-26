@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ListaErrores>
+  <Error>
+    <Nombre>Carcter_A</Nombre>
+    <Valor>A</Valor>
+    <Fila>0</Fila>
+    <Columna>0</Columna>
+  </Error>
+  <Error>
+    <Nombre>Carcter_D</Nombre>
+    <Valor>D</Valor>
+    <Fila>0</Fila>
+    <Columna>1</Columna>
+  </Error>
+  <Error>
+    <Nombre>Carcter_B</Nombre>
+    <Valor>B</Valor>
+    <Fila>0</Fila>
+    <Columna>2</Columna>
+  </Error>
+  <Error>
+    <Nombre>Carcter_ </Nombre>
+    <Valor> </Valor>
+    <Fila>0</Fila>
+    <Columna>7</Columna>
+  </Error>
+  <Error>
+    <Nombre>Carcter_ </Nombre>
+    <Valor> </Valor>
+    <Fila>0</Fila>
+    <Columna>8</Columna>
+  </Error>
+  <Error>
+    <Nombre>Carcter_ </Nombre>
+    <Valor> </Valor>
+    <Fila>0</Fila>
+    <Columna>9</Columna>
+  </Error>
+  <Error>
+    <Nombre>Carcter_ </Nombre>
+    <Valor> </Valor>
+    <Fila>0</Fila>
+    <Columna>10</Columna>
+  </Error>
+  <Error>
+    <Nombre>Carcter_ </Nombre>
+    <Valor> </Valor>
+    <Fila>0</Fila>
+    <Columna>11</Columna>
+  </Error>
+  <Error>
+    <Nombre>Carcter_ </Nombre>
+    <Valor> </Valor>
+    <Fila>0</Fila>
+    <Columna>12</Columna>
+  </Error>
+  <Error>
+    <Nombre>Carcter_E</Nombre>
+    <Valor>E</Valor>
+    <Fila>0</Fila>
+    <Columna>13</Columna>
+  </Error>
+  <Error>
+    <Nombre>Carcter_F</Nombre>
+    <Valor>F</Valor>
+    <Fila>0</Fila>
+    <Columna>14</Columna>
+  </Error>
+  <Error>
+    <Nombre>Carcter_G</Nombre>
+    <Valor>G</Valor>
+    <Fila>0</Fila>
+    <Columna>15</Columna>
+  </Error>
+  <Error>
+    <Nombre>Carcter_ </Nombre>
+    <Valor> </Valor>
+    <Fila>0</Fila>
+    <Columna>18</Columna>
+  </Error>
+  <Error>
+    <Nombre>Carcter_ </Nombre>
+    <Valor> </Valor>
+    <Fila>0</Fila>
+    <Columna>19</Columna>
+  </Error>
+  <Error>
+    <Nombre>Carcter_ </Nombre>
+    <Valor> </Valor>
+    <Fila>0</Fila>
+    <Columna>20</Columna>
+  </Error>
+  <Error>
+    <Nombre>Carcter_ </Nombre>
+    <Valor> </Valor>
+    <Fila>0</Fila>
+    <Columna>21</Columna>
+  </Error>
+  <Error>
+    <Nombre>Carcter_ </Nombre>
+    <Valor> </Valor>
+    <Fila>0</Fila>
+    <Columna>22</Columna>
+  </Error>
+  <Error>
+    <Nombre>Carcter_ </Nombre>
+    <Valor> </Valor>
+    <Fila>0</Fila>
+    <Columna>23</Columna>
+  </Error>
+  <Error>
+    <Nombre>Carcter_H</Nombre>
+    <Valor>H</Valor>
+    <Fila>0</Fila>
+    <Columna>24</Columna>
+  </Error>
+  <Error>
+    <Nombre>Carcter_I</Nombre>
+    <Valor>I</Valor>
+    <Fila>0</Fila>
+    <Columna>25</Columna>
+  </Error>
+  <Error>
+    <Nombre>Carcter_ </Nombre>
+    <Valor> </Valor>
+    <Fila>0</Fila>
+    <Columna>28</Columna>
+  </Error>
+  <Error>
+    <Nombre>Carcter_ </Nombre>
+    <Valor> </Valor>
+    <Fila>0</Fila>
+    <Columna>29</Columna>
+  </Error>
+  <Error>
+    <Nombre>Carcter_ </Nombre>
+    <Valor> </Valor>
+    <Fila>0</Fila>
+    <Columna>30</Columna>
+  </Error>
+  <Error>
+    <Nombre>Carcter_ </Nombre>
+    <Valor> </Valor>
+    <Fila>0</Fila>
+    <Columna>31</Columna>
+  </Error>
+  <Error>
+    <Nombre>Carcter_ </Nombre>
+    <Valor> </Valor>
+    <Fila>0</Fila>
+    <Columna>32</Columna>
+  </Error>
+  <Error>
+    <Nombre>Carcter_ </Nombre>
+    <Valor> </Valor>
+    <Fila>0</Fila>
+    <Columna>33</Columna>
+  </Error>
+  <Error>
+    <Nombre>Carcter_J</Nombre>
+    <Valor>J</Valor>
+    <Fila>0</Fila>
+    <Columna>34</Columna>
+  </Error>
+  <Error>
+    <Nombre>Carcter_K</Nombre>
+    <Valor>K</Valor>
+    <Fila>0</Fila>
+    <Columna>35</Columna>
+  </Error>
+  <Error>
+    <Nombre>Carcter_L</Nombre>
+    <Valor>L</Valor>
+    <Fila>0</Fila>
+    <Columna>36</Columna>
+  </Error>
+</ListaErrores>

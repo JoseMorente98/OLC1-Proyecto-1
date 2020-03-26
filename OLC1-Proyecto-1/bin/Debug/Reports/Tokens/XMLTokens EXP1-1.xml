@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ListaToken>
+  <Token>
+    <Nombre>Carcter_#</Nombre>
+    <Valor>#</Valor>
+    <Fila>0</Fila>
+    <Columna>0</Columna>
+  </Token>
+  <Token>
+    <Nombre>Carcter_5</Nombre>
+    <Valor>5</Valor>
+    <Fila>0</Fila>
+    <Columna>1</Columna>
+  </Token>
+  <Token>
+    <Nombre>Carcter_2</Nombre>
+    <Valor>2</Valor>
+    <Fila>0</Fila>
+    <Columna>2</Columna>
+  </Token>
+  <Token>
+    <Nombre>Carcter_0</Nombre>
+    <Valor>0</Valor>
+    <Fila>0</Fila>
+    <Columna>3</Columna>
+  </Token>
+  <Token>
+    <Nombre>Carcter_A</Nombre>
+    <Valor>A</Valor>
+    <Fila>0</Fila>
+    <Columna>4</Columna>
+  </Token>
+  <Token>
+    <Nombre>Carcter_0</Nombre>
+    <Valor>0</Valor>
+    <Fila>0</Fila>
+    <Columna>5</Columna>
+  </Token>
+  <Token>
+    <Nombre>Carcter_A</Nombre>
+    <Valor>A</Valor>
+    <Fila>0</Fila>
+    <Columna>6</Columna>
+  </Token>
+</ListaToken>
