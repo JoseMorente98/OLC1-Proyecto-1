@@ -14,6 +14,12 @@ namespace OLC1_Proyecto_1.Modelo
         private int columna;
         private int fila;
 
+        public int IdToken { get => idToken; set => idToken = value; }
+        public string Lexema { get => lexema; set => lexema = value; }
+        public string Descripcion { get => descripcion; set => descripcion = value; }
+        public int Columna { get => columna; set => columna = value; }
+        public int Fila { get => fila; set => fila = value; }
+
         public Token(int idToken, string lexema, string descripcion, int columna, int fila)
         {
             this.IdToken = idToken;
@@ -27,10 +33,5 @@ namespace OLC1_Proyecto_1.Modelo
         {
         }
 
-        public int IdToken { get => idToken; set => idToken = value; }
-        public string Lexema { get => lexema; set => lexema = value; }
-        public string Descripcion { get => descripcion; set => descripcion = value; }
-        public int Columna { get => columna; set => columna = value; }
-        public int Fila { get => fila; set => fila = value; }
     }
 }

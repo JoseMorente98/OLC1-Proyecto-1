@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,7 +11,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FastColoredTextBoxNS;
 using MetroFramework;
+using OLC1_Proyecto_1.Analizador;
 using OLC1_Proyecto_1.Controlador;
+using OLC1_Proyecto_1.Modelo;
 
 namespace OLC1_Proyecto_1
 {
@@ -23,6 +26,8 @@ namespace OLC1_Proyecto_1
         //string auxiliar = "";
         public string charInicial = "";
         string appPath = Application.StartupPath;
+        string fileName = "";
+        string tipo = "";
 
         public Form1()
         {
@@ -61,6 +66,7 @@ namespace OLC1_Proyecto_1
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 filePath = openFileDialog.FileName;
+                fileName = System.IO.Path.GetFileName(openFileDialog.FileName);
                 tabControl1.SelectedTab.Text = filePath;
             }
 
@@ -217,6 +223,233 @@ namespace OLC1_Proyecto_1
         private void reporteDeErrorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ControladorXML.Instancia.ReporteErrorXML();
+        }
+
+        private void reporteDeTokensToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ControladorReporte.Instancia.GetReportTokens();
+        }
+
+        private void reporteDeErrorToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ControladorReporte.Instancia.GetReportTokensError();
+        }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            foreach (Control c in tabControl1.SelectedTab.Controls)
+            {
+                FastColoredTextBox rtb = c as FastColoredTextBox;
+                if (rtb.Text != "")
+                {
+                    consola.Clear();
+                    ControladorConjunto.Instancia.clearList();
+                    ControladorNodo.Instancia.clearList();
+                    ControladorEvaluador.Instancia.clearList();
+                    ControladorToken.Instancia.Limpieza();
+                    AnalizadorLexico.Instancia.Scanner(rtb.Text);
+
+                    /*foreach(Token t in TokenController.Instancia.getArrayListTokens())
+                    {
+                        Console.WriteLine("ID: " + t.Description + " - " + t.Lexema);
+                    }*/
+
+                }
+                else
+                {
+                    alertMessage("No existe texto para analizar D:");
+                }
+            }
+
+
+
+            //////// PARTE DE LOS CONJUNTOS
+            ControladorConjunto.Instancia.assemble_Sets();
+            //SetController.Instancia.ShowSets();
+
+            /////// Parte de la expresion regular
+            ControladorExpresionRegular.Instancia.GetElements(Application.StartupPath);
+
+            //LA CONSTRUCCION DE LOS AUTOMATAS SE PASO A 
+            //RegularExpressionController-> Insertar, al final del metodo;
+
+
+            //Evaluar la expresion
+            GetString();
+        }
+
+        //METODO QUE BUSCA LA CADENA A EVALUAR;
+        public void GetString()
+        {
+            int contador = 0;
+            String expressionName = "";
+            String strcadena = "";
+            string cadena = "";
+            string contenido = "";
+
+            ArrayList l = ControladorToken.Instancia.ArrayListTokens;
+            for (int i = 0; i < l.Count; i++)
+            {
+                Token t = (Token)l[i];
+                if (t.Lexema.Equals(":"))
+                {
+
+                    //busca el nombre de la expresion
+                    for (int j = i; j > 0; j--)
+                    {
+                        Token a = (Token)l[j];
+                        if (a.Descripcion.Equals("Identificador"))
+                        {
+                            expressionName = a.Lexema;
+                            break;
+                        }
+                    }
+                    //itera en la expresion y guarda los elementos
+                    for (int j = i + 1; j < l.Count; j++)
+                    {
+                        Token t2 = (Token)l[j];
+                        if (!t2.Lexema.Equals(";")) //El limite de la expresion es el punto y coma
+                        {
+                            if (t2.Descripcion.Equals("Cadena"))
+                            {
+                                strcadena = t2.Lexema;
+                            }
+                        }
+                        else
+                        {
+                            if (expressionName != "" && strcadena != "")
+                            {
+
+                                if (ControladorEvaluador.Instancia.SimulateExpression(expressionName, strcadena))
+                                {
+
+                                    consola.AppendText("* La Cadena " + strcadena + " de la Expresion " + expressionName + " fue Evaluada correctamente\n");
+                                    contenido = "<tr>\n" +
+                                       "     <td>" + "* La Cadena " + strcadena + " de la Expresion " + expressionName + " fue Evaluada correctamente\n" + "</td>\n" +
+                                       "</tr>";
+                                    cadena = cadena + contenido;
+                                    ControladorEvaluador.Instancia.ReporteTokenXML(appPath, expressionName + "-" + contador);
+                                }
+                                /*else if (EvaluatorController.Instancia.SimulateExpressionWhitString(expressionName, strcadena))
+                                {
+                                    consola.AppendText("* La Cadena " + strcadena + " de la Expresion " + expressionName + " fue Evaluada correctamente\n");
+                                }*/
+                                else
+                                {
+                                    String error = ControladorEvaluador.Instancia.GetError();
+                                    consola.AppendText(error);
+                                    contenido = "<tr>\n" +
+                                       "     <td>" + error + "</td>\n" +
+                                       "</tr>";
+                                    cadena = cadena + contenido;
+                                    ControladorEvaluador.Instancia.ReporteErrorXML(appPath, expressionName + "-" + contador);
+                                }
+                                contador++;
+
+                            }
+                            i = j;
+                            break;
+                        }
+                    }
+                }
+
+
+            }
+
+            string cadena2 = "<th scope =\"col\">Evaluación</th>\n";
+            ControladorReporte.Instancia.GetHTML("Consola" + fileName, cadena2, cadena, "Expresiones evaluadas en consola.");
+        }
+
+        public void alertMessage(String mensaje)
+        {
+            MessageBox.Show(mensaje, "Error",
+            MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            comboBox2.Items.Clear();
+            int selectedIndex = comboBox1.SelectedIndex;
+            Object selectedItem = comboBox1.SelectedItem;
+            if(selectedItem!=null)
+            {
+                switch (selectedItem.ToString())
+                {
+                    case "Autómata Finito No Determinista":
+                        tipo = "AFN";
+                        foreach (Imagen imagen in ControladorImagen.Instancia.ArrayListImagen)
+                        {
+                            if (imagen.Tipo.Equals(tipo))
+                            {
+                                comboBox2.Items.Add(imagen);
+                            }
+                        }
+                        break;
+                    case "Tabla de Transiciones":
+                        tipo = "Transicion";
+                        foreach (Imagen imagen in ControladorImagen.Instancia.ArrayListImagen)
+                        {
+                            if (imagen.Tipo.Equals(tipo))
+                            {
+                                comboBox2.Items.Add(imagen);
+                            }
+                        }
+                        break;
+                    case "Autómata Finito Determinista":
+                        tipo = "AFD";
+                        foreach (Imagen imagen in ControladorImagen.Instancia.ArrayListImagen)
+                        {
+                            if (imagen.Tipo.Equals(tipo))
+                            {
+                                comboBox2.Items.Add(imagen);
+                            }
+                        }
+                        break;
+                    case "Token XML":
+                        tipo = "Token";
+                        foreach (Imagen imagen in ControladorImagen.Instancia.ArrayListImagen)
+                        {
+                            if (imagen.Tipo.Equals(tipo))
+                            {
+                                comboBox2.Items.Add(imagen);
+                            }
+                        }
+                        break;
+                    case "Token Error XML":
+                        tipo = "Error";
+                        foreach (Imagen imagen in ControladorImagen.Instancia.ArrayListImagen)
+                        {
+                            if (imagen.Tipo.Equals(tipo))
+                            {
+                                comboBox2.Items.Add(imagen);
+                            }
+                        }
+                        break;
+                    default:
+                        tipo = "";
+                        break;
+                }
+            }
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int selectedIndex = comboBox2.SelectedIndex;
+            Object selectedItem = comboBox2.SelectedItem;
+            if(selectedItem!=null)
+            {
+                Imagen imagen1 = ControladorImagen.Instancia.BuscarImagen(selectedItem.ToString());
+                if(imagen1.Tipo.Equals("Token"))
+                {
+                    System.Diagnostics.Process.Start(imagen1.Path);
+                } else if (imagen1.Tipo.Equals("Error"))
+                {
+                    System.Diagnostics.Process.Start(imagen1.Path);
+                } else
+                {
+                    this.pictureBox1.Image = System.Drawing.Image.FromFile(imagen1.Path + "\\" + imagen1.Nombre);
+                }
+            }
         }
     }
 }

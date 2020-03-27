@@ -119,9 +119,9 @@
             
             
              <param name="Url">              An absolute Uri.  Points to the Html document to be rendered as a PDF. </param>
-             <param name="PrintOptions">     Instance of  <see cref='T:IronPdf.PdfPrintOptions'/>. Optional print
+             <param name="PrintOptions">     Instancia of  <see cref='T:IronPdf.PdfPrintOptions'/>. Optional print
                                              options and settings. </param>
-             <param name="LoginCredentials"> Instance of  <see cref='T:IronPdf.HttpLoginCredentials'/>.
+             <param name="LoginCredentials"> Instancia of  <see cref='T:IronPdf.HttpLoginCredentials'/>.
                                              Optional login credentials for Windows, Linux and Html Form
                                              login environments. </param>
             
@@ -133,9 +133,9 @@
             
             
              <param name="UrlOrPath">        An absolute Url or file path.  Points to the Html document to be rendered as a PDF. </param>
-             <param name="PrintOptions">     Instance of  <see cref='T:IronPdf.PdfPrintOptions'/>. Optional print
+             <param name="PrintOptions">     Instancia of  <see cref='T:IronPdf.PdfPrintOptions'/>. Optional print
                                              options and settings. </param>
-             <param name="LoginCredentials"> Instance of  <see cref='T:IronPdf.HttpLoginCredentials'/>.
+             <param name="LoginCredentials"> Instancia of  <see cref='T:IronPdf.HttpLoginCredentials'/>.
                                              Optional login credentials for Windows, Linux and Html Form
                                              login environments. </param>
             
@@ -146,7 +146,7 @@
             
             
              <param name="FilePath">  Path to an Html file.</param>
-             <param name="PrintOptions">     Instance of  <see cref='T:IronPdf.PdfPrintOptions'/>. Optional print options and settings. </param>
+             <param name="PrintOptions">     Instancia of  <see cref='T:IronPdf.PdfPrintOptions'/>. Optional print options and settings. </param>
              <returns>   A <see cref="T:IronPdf.PdfDocument"/> </returns>
         </member>
         <member name="M:IronPdf.HtmlToPdf.StaticRenderHtmlAsPdf(System.String,System.String,IronPdf.PdfPrintOptions,System.String)">
@@ -159,7 +159,7 @@
             
              <param name="Html">     Html to be turned into a PDF. </param>
              <param name="BaseUrlOrPath">  Setting the BaseUrlOrPath property gives the Html a relative for content links such as hyper-links, images, CSS and JavaScript files.</param>
-             <param name="PrintOptions">     Instance of  <see cref='T:IronPdf.PdfPrintOptions'/>. Optional print options and settings. </param>
+             <param name="PrintOptions">     Instancia of  <see cref='T:IronPdf.PdfPrintOptions'/>. Optional print options and settings. </param>
              <param name="Proxy">Specifies an Http proxy server.   Use the pattern: http(s)://user-name:password@host:port/</param>
             
              <returns> A <see cref='T:IronPdf.PdfDocument'/>  </returns>
@@ -170,7 +170,7 @@
             PDF document.
             </summary>
             <param name="Html">Html to be turned into a PDF.</param>
-            <param name="PrintOptions">Instance of  <see cref="T:IronPdf.PdfPrintOptions" />. Optional print options and settings.</param>
+            <param name="PrintOptions">Instancia of  <see cref="T:IronPdf.PdfPrintOptions" />. Optional print options and settings.</param>
             <returns>
             A <see cref="T:IronPdf.PdfDocument" />
             </returns>
@@ -185,7 +185,7 @@
             
              <param name="Html">     Html to be turned into a PDF. </param>
              <param name="BaseUrl">  Setting the BaseURL property gives the Html a relative for content links such as hyper-links, images, CSS and JavaScript files.</param>
-             <param name="PrintOptions">     Instance of  <see cref='T:IronPdf.PdfPrintOptions'/>. Optional print options and settings. </param>
+             <param name="PrintOptions">     Instancia of  <see cref='T:IronPdf.PdfPrintOptions'/>. Optional print options and settings. </param>
              <param name="Proxy"> Specifies an Http proxy server.   Use the pattern: http(s)://user-name:password@host:port/</param>
             
              <returns> A <see cref='T:IronPdf.PdfDocument'/>  </returns>
@@ -2082,7 +2082,7 @@
             <summary>
             Renders page headers and footers to an existing PDF File
             </summary>
-            <param name="Options">Instance of <see cref='T:IronPdf.PdfPrintOptions'/> with the specified <see cref='F:IronPdf.PdfPrintOptions.Header'/> and <see cref='F:IronPdf.PdfPrintOptions.Footer'/>. </param>
+            <param name="Options">Instancia of <see cref='T:IronPdf.PdfPrintOptions'/> with the specified <see cref='F:IronPdf.PdfPrintOptions.Header'/> and <see cref='F:IronPdf.PdfPrintOptions.Footer'/>. </param>
             <param name="SkipFirstPage">if set to <c>true</c>, the first (cover) page is not counted or stamped with the specified <see cref='F:IronPdf.PdfPrintOptions.Header'/> and <see cref='F:IronPdf.PdfPrintOptions.Footer'/>.</param>
             <param name="PageIndexes">Optional. The <paramref name="PageIndexes"/> (zero-based page numbers) to which the specified <see cref='F:IronPdf.PdfPrintOptions.Header'/> and <see cref='F:IronPdf.PdfPrintOptions.Footer'/> will be added.</param>
             <returns>Returns this PdfDocument object, allowing for a 'fluent' (LINQ like) chained in-line code style</returns>

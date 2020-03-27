@@ -36,6 +36,12 @@
     <Reference Include="FastColoredTextBox, Version=2.16.24.0, Culture=neutral, PublicKeyToken=fb8aa12b994ef61b, processorArchitecture=MSIL">
       <HintPath>..\packages\FCTB.2.16.24\lib\FastColoredTextBox.dll</HintPath>
     </Reference>
+    <Reference Include="IronPdf, Version=2020.3.2.0, Culture=neutral, PublicKeyToken=94e1c31412563c75, processorArchitecture=MSIL">
+      <HintPath>..\packages\IronPdf.2020.3.2\lib\net40\IronPdf.dll</HintPath>
+    </Reference>
+    <Reference Include="IronPdf.Assets.Rendering.Windows, Version=18.0.0.0, Culture=neutral, PublicKeyToken=94e1c31412563c75, processorArchitecture=MSIL">
+      <HintPath>..\packages\Iron.Assets.Rendering.Windows.18.0.1\lib\net40\IronPdf.Assets.Rendering.Windows.dll</HintPath>
+    </Reference>
     <Reference Include="MetroFramework, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroFramework.RunTime.1.2.0.3\lib\net40-Client\MetroFramework.dll</HintPath>
     </Reference>
@@ -46,8 +52,10 @@
     <Reference Include="MetroFramework.Fonts, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroFramework.Fonts.1.2.0.3\lib\net40\MetroFramework.Fonts.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -60,15 +68,33 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Analizador\AnalizadorLexico.cs" />
+    <Compile Include="AutomataFinito\AutomataFinitoDeterminista.cs" />
+    <Compile Include="AutomataFinito\AutomataFinitoNoDeterminista.cs" />
+    <Compile Include="Controlador\ControladorImagen.cs" />
+    <Compile Include="Controlador\ControladorReporte.cs" />
     <Compile Include="Controlador\ControladorToken.cs" />
     <Compile Include="Controlador\ControladorXML.cs" />
+    <Compile Include="Controlador\ControladorEvaluador.cs" />
+    <Compile Include="Controlador\ControladorNodo.cs" />
+    <Compile Include="Controlador\ControladorRegex.cs" />
+    <Compile Include="Controlador\ControladorExpresionRegular.cs" />
+    <Compile Include="Controlador\ControladorConjunto.cs" />
+    <Compile Include="Controlador\ControladorThompson.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modelo\Automata.cs" />
+    <Compile Include="Modelo\Estado.cs" />
+    <Compile Include="Modelo\Evaluador.cs" />
+    <Compile Include="Modelo\Imagen.cs" />
+    <Compile Include="Modelo\Nodo.cs" />
+    <Compile Include="Modelo\ExpresionRegular.cs" />
+    <Compile Include="Modelo\Conjunto.cs" />
     <Compile Include="Modelo\Token.cs" />
+    <Compile Include="Modelo\Transicion.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">

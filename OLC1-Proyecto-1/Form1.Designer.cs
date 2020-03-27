@@ -40,6 +40,8 @@
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteDeTokensToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteDeErrorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteDeTokensToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteDeErrorToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manualDeAplicaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manualTécnicoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,12 +53,21 @@
             this.fastColoredTextBox2 = new FastColoredTextBoxNS.FastColoredTextBox();
             this.consola = new System.Windows.Forms.RichTextBox();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fastColoredTextBox1)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fastColoredTextBox2)).BeginInit();
+            this.metroPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -125,7 +136,9 @@
             // 
             this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.reporteDeTokensToolStripMenuItem,
-            this.reporteDeErrorToolStripMenuItem});
+            this.reporteDeErrorToolStripMenuItem,
+            this.reporteDeTokensToolStripMenuItem1,
+            this.reporteDeErrorToolStripMenuItem1});
             this.reportesToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(82, 24);
@@ -134,16 +147,30 @@
             // reporteDeTokensToolStripMenuItem
             // 
             this.reporteDeTokensToolStripMenuItem.Name = "reporteDeTokensToolStripMenuItem";
-            this.reporteDeTokensToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.reporteDeTokensToolStripMenuItem.Text = "Reporte de Tokens";
+            this.reporteDeTokensToolStripMenuItem.Size = new System.Drawing.Size(248, 26);
+            this.reporteDeTokensToolStripMenuItem.Text = "Reporte de Tokens XML";
             this.reporteDeTokensToolStripMenuItem.Click += new System.EventHandler(this.reporteDeTokensToolStripMenuItem_Click);
             // 
             // reporteDeErrorToolStripMenuItem
             // 
             this.reporteDeErrorToolStripMenuItem.Name = "reporteDeErrorToolStripMenuItem";
-            this.reporteDeErrorToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.reporteDeErrorToolStripMenuItem.Text = "Reporte de Error";
+            this.reporteDeErrorToolStripMenuItem.Size = new System.Drawing.Size(248, 26);
+            this.reporteDeErrorToolStripMenuItem.Text = "Reporte de Error XML";
             this.reporteDeErrorToolStripMenuItem.Click += new System.EventHandler(this.reporteDeErrorToolStripMenuItem_Click);
+            // 
+            // reporteDeTokensToolStripMenuItem1
+            // 
+            this.reporteDeTokensToolStripMenuItem1.Name = "reporteDeTokensToolStripMenuItem1";
+            this.reporteDeTokensToolStripMenuItem1.Size = new System.Drawing.Size(248, 26);
+            this.reporteDeTokensToolStripMenuItem1.Text = "Reporte de Tokens";
+            this.reporteDeTokensToolStripMenuItem1.Click += new System.EventHandler(this.reporteDeTokensToolStripMenuItem1_Click);
+            // 
+            // reporteDeErrorToolStripMenuItem1
+            // 
+            this.reporteDeErrorToolStripMenuItem1.Name = "reporteDeErrorToolStripMenuItem1";
+            this.reporteDeErrorToolStripMenuItem1.Size = new System.Drawing.Size(248, 26);
+            this.reporteDeErrorToolStripMenuItem1.Text = "Reporte de Error";
+            this.reporteDeErrorToolStripMenuItem1.Click += new System.EventHandler(this.reporteDeErrorToolStripMenuItem1_Click);
             // 
             // ayudaToolStripMenuItem
             // 
@@ -252,7 +279,7 @@
         '\"',
         '\'',
         '\''};
-            this.fastColoredTextBox2.AutoScrollMinSize = new System.Drawing.Size(29, 19);
+            this.fastColoredTextBox2.AutoScrollMinSize = new System.Drawing.Size(2, 19);
             this.fastColoredTextBox2.BackBrush = null;
             this.fastColoredTextBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.fastColoredTextBox2.CharHeight = 19;
@@ -294,11 +321,97 @@
             this.metroLabel3.Text = "Consola";
             this.metroLabel3.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
+            // metroButton1
+            // 
+            this.metroButton1.Location = new System.Drawing.Point(776, 370);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(75, 23);
+            this.metroButton1.TabIndex = 13;
+            this.metroButton1.Text = "Analizar";
+            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Autómata Finito No Determinista",
+            "Tabla de Transiciones",
+            "Autómata Finito Determinista",
+            "Token XML",
+            "Token Error XML"
+            });
+            this.comboBox1.Location = new System.Drawing.Point(857, 116);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(300, 24);
+            this.comboBox1.TabIndex = 14;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(1164, 116);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(300, 24);
+            this.comboBox2.TabIndex = 15;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            // 
+            // metroLabel1
+            // 
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.Location = new System.Drawing.Point(857, 90);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(36, 20);
+            this.metroLabel1.TabIndex = 16;
+            this.metroLabel1.Text = "Tipo";
+            this.metroLabel1.Theme = MetroFramework.MetroThemeStyle.Dark;
+            // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.Location = new System.Drawing.Point(1164, 90);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(69, 20);
+            this.metroLabel2.TabIndex = 17;
+            this.metroLabel2.Text = "Expresión";
+            this.metroLabel2.Theme = MetroFramework.MetroThemeStyle.Dark;
+            // 
+            // metroPanel1
+            // 
+            this.metroPanel1.AutoScroll = true;
+            this.metroPanel1.Controls.Add(this.pictureBox1);
+            this.metroPanel1.HorizontalScrollbar = true;
+            this.metroPanel1.HorizontalScrollbarBarColor = true;
+            this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.HorizontalScrollbarSize = 10;
+            this.metroPanel1.Location = new System.Drawing.Point(857, 146);
+            this.metroPanel1.Name = "metroPanel1";
+            this.metroPanel1.Size = new System.Drawing.Size(723, 551);
+            this.metroPanel1.TabIndex = 18;
+            this.metroPanel1.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroPanel1.VerticalScrollbar = true;
+            this.metroPanel1.VerticalScrollbarBarColor = true;
+            this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.VerticalScrollbarSize = 10;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(4000, 2000);
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1600, 720);
+            this.Controls.Add(this.metroPanel1);
+            this.Controls.Add(this.metroLabel2);
+            this.Controls.Add(this.metroLabel1);
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.consola);
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.tabControl1);
@@ -315,6 +428,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.fastColoredTextBox1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.fastColoredTextBox2)).EndInit();
+            this.metroPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -343,6 +458,15 @@
         private FastColoredTextBoxNS.FastColoredTextBox fastColoredTextBox2;
         private System.Windows.Forms.RichTextBox consola;
         private MetroFramework.Controls.MetroLabel metroLabel3;
+        private System.Windows.Forms.ToolStripMenuItem reporteDeTokensToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem reporteDeErrorToolStripMenuItem1;
+        private MetroFramework.Controls.MetroButton metroButton1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private MetroFramework.Controls.MetroLabel metroLabel1;
+        private MetroFramework.Controls.MetroLabel metroLabel2;
+        private MetroFramework.Controls.MetroPanel metroPanel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
