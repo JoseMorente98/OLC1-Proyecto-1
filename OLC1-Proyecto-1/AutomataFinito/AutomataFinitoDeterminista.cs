@@ -122,7 +122,6 @@ namespace OLC1_Proyecto_1.AutomataFinito
                         }
                     }
                 }
-
                 indiceEstadoInicio++;
             }
             this.afd = automata;

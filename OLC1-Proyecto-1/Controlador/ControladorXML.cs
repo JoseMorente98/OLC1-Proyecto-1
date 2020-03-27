@@ -1,9 +1,11 @@
 ﻿using OLC1_Proyecto_1.Modelo;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using System.Xml.Linq;
 
 namespace OLC1_Proyecto_1.Controlador
@@ -11,6 +13,7 @@ namespace OLC1_Proyecto_1.Controlador
     class ControladorXML
     {
         private readonly static ControladorXML instancia = new ControladorXML();
+        string path = Application.StartupPath;
 
         private ControladorXML()
         {
@@ -40,7 +43,14 @@ namespace OLC1_Proyecto_1.Controlador
                 );
                 xElement.Add(elementToken);
             }
-            xDocument.Save(@"C:\OLC1\Token.xml");
+            if (!Directory.Exists(path + "\\Reportes\\Tokens"))
+            {
+                DirectoryInfo directoryInfo = Directory.CreateDirectory(path + "\\Reportes\\Tokens");
+            }
+
+            String tokenPath = path + "\\Reportes\\Tokens\\TokenXML.xml";
+            xDocument.Save(tokenPath);
+            System.Diagnostics.Process.Start(tokenPath);
         }
 
         public void ReporteErrorXML()
@@ -59,7 +69,14 @@ namespace OLC1_Proyecto_1.Controlador
                 );
                 xElement.Add(elementToken);
             }
-            xDocument.Save(@"C:\OLC1\Error.xml");
+            if (!Directory.Exists(path + "\\Reportes\\Tokens"))
+            {
+                DirectoryInfo directoryInfo = Directory.CreateDirectory(path + "\\Reportes\\Tokens");
+            }
+
+            String tokenPath = path + "\\Reportes\\Tokens\\TokenErrorXML.xml";
+            xDocument.Save(tokenPath);
+            System.Diagnostics.Process.Start(tokenPath);
         }
     }
 }

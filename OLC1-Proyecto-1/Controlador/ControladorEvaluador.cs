@@ -150,7 +150,7 @@ namespace OLC1_Proyecto_1.Controlador
 
                     }
 
-                    String str_temp = cadenaAEvaluar.Trim('"');
+                    String stringTemporal = cadenaAEvaluar.Trim('"');
 
                     switch (swcase)
                     {
@@ -158,16 +158,16 @@ namespace OLC1_Proyecto_1.Controlador
                         case 0:
                             int countAux = 1;
                             Char ch = ' ';
-                            for (int i = 0; i < str_temp.Length; i++)
+                            for (int i = 0; i < stringTemporal.Length; i++)
                             {
                                 //VERIFICA QUE LOS ELEMENTOS PERTENEZCAN AL ALFABETO
-                                ch = str_temp[i];
+                                ch = stringTemporal[i];
 
                                 if (!arrayListAlfabeto.Contains(ch.ToString()))
                                 {
                                     countAux = 0;
                                     //GUARDAR EN ARRAY DE ERRORES
-                                    Token t = new Token(0, str_temp[i].ToString(), "Carcter_" + str_temp[i].ToString(), i, 0);
+                                    Token t = new Token(0, stringTemporal[i].ToString(), "Carcter_" + stringTemporal[i].ToString(), i, 0);
                                     ArrayListErroresEvaluados.Add(t);
                                     break;
                                 }
@@ -176,15 +176,15 @@ namespace OLC1_Proyecto_1.Controlador
                             if (countAux == 1)
                             {
                                //SE EVALUA CADA EXPRESION
-                                validacion = ControladorThompson.Instancia.EvaluateExpression(str_temp, afdTemporal, null, false);
+                                validacion = ControladorThompson.Instancia.EvaluateExpression(stringTemporal, afdTemporal, null, false);
 
                                 //CADENA VALIDA
                                 if (validacion)
                                 {
                                     //AGREGAR TOKEN'S
-                                    for (int i = 0; i < str_temp.Length; i++)
+                                    for (int i = 0; i < stringTemporal.Length; i++)
                                     {
-                                        Token t = new Token(0, str_temp[i].ToString(), "Carcter_" + str_temp[i].ToString(), i, 0);
+                                        Token t = new Token(0, stringTemporal[i].ToString(), "Carcter_" + stringTemporal[i].ToString(), i, 0);
                                         ArrayListTokensEvaluados.Add(t);
                                     }
 
@@ -233,16 +233,15 @@ namespace OLC1_Proyecto_1.Controlador
                                 }
                             }
 
-                            for (int i = 0; i < str_temp.Length; i++)
+                            for (int i = 0; i < stringTemporal.Length; i++)
                             {
-
-                                char a = str_temp[i];
+                                char a = stringTemporal[i];
                                 if (arrayListCabeza.Contains(a.ToString()))
                                 {
                                     int contInterno = 0;
-                                    for (int j = i; j < str_temp.Length; j++)
+                                    for (int j = i; j < stringTemporal.Length; j++)
                                     {
-                                        iteradorCadena = iteradorCadena + str_temp[j];
+                                        iteradorCadena = iteradorCadena + stringTemporal[j];
                                         if (arrayListCadenas.Contains(iteradorCadena))
                                         {
                                             i = j;
@@ -257,17 +256,16 @@ namespace OLC1_Proyecto_1.Controlador
                                     }
                                     else
                                     {
-                                        arrayListCadenas2.Add(str_temp[i].ToString());
+                                        arrayListCadenas2.Add(stringTemporal[i].ToString());
                                     }
                                 }
                                 else
                                 {
-                                    arrayListCadenas2.Add(str_temp[i].ToString());
+                                    arrayListCadenas2.Add(stringTemporal[i].ToString());
                                 }
                                 iteradorCadena = "";
                             }
-
-                            validacion = ControladorThompson.Instancia.EvaluateExpression(str_temp, afdTemporal, arrayListCadenas2, true);
+                            validacion = ControladorThompson.Instancia.EvaluateExpression(stringTemporal, afdTemporal, arrayListCadenas2, true);
                             if (!validacion)
                             {
                                 StringError = ">> La cadena de texto " + cadenaAEvaluar + " contiene errores D:.\n";

@@ -237,6 +237,7 @@ namespace OLC1_Proyecto_1
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
+            ControladorImagen.Instancia.ArrayListImagen.Clear();
             foreach (Control c in tabControl1.SelectedTab.Controls)
             {
                 FastColoredTextBox rtb = c as FastColoredTextBox;
@@ -248,12 +249,6 @@ namespace OLC1_Proyecto_1
                     ControladorEvaluador.Instancia.clearList();
                     ControladorToken.Instancia.Limpieza();
                     AnalizadorLexico.Instancia.Scanner(rtb.Text);
-
-                    /*foreach(Token t in TokenController.Instancia.getArrayListTokens())
-                    {
-                        Console.WriteLine("ID: " + t.Description + " - " + t.Lexema);
-                    }*/
-
                 }
                 else
                 {
@@ -261,31 +256,19 @@ namespace OLC1_Proyecto_1
                 }
             }
 
-
-
-            //////// PARTE DE LOS CONJUNTOS
             ControladorConjunto.Instancia.assemble_Sets();
-            //SetController.Instancia.ShowSets();
-
-            /////// Parte de la expresion regular
             ControladorExpresionRegular.Instancia.GetElements(Application.StartupPath);
-
-            //LA CONSTRUCCION DE LOS AUTOMATAS SE PASO A 
-            //RegularExpressionController-> Insertar, al final del metodo;
-
-
-            //Evaluar la expresion
-            GetString();
+            EvaluarCadena();
         }
 
         //METODO QUE BUSCA LA CADENA A EVALUAR;
-        public void GetString()
+        public void EvaluarCadena()
         {
             int contador = 0;
-            String expressionName = "";
-            String strcadena = "";
-            string cadena = "";
-            string contenido = "";
+            String nombreExpresion = "";
+            String stringCadena = "";
+            string tBody = "";
+            string stringContenido = "";
 
             ArrayList l = ControladorToken.Instancia.ArrayListTokens;
             for (int i = 0; i < l.Count; i++)
@@ -300,7 +283,7 @@ namespace OLC1_Proyecto_1
                         Token a = (Token)l[j];
                         if (a.Descripcion.Equals("Identificador"))
                         {
-                            expressionName = a.Lexema;
+                            nombreExpresion = a.Lexema;
                             break;
                         }
                     }
@@ -312,52 +295,44 @@ namespace OLC1_Proyecto_1
                         {
                             if (t2.Descripcion.Equals("Cadena"))
                             {
-                                strcadena = t2.Lexema;
+                                stringCadena = t2.Lexema;
                             }
                         }
                         else
                         {
-                            if (expressionName != "" && strcadena != "")
+                            if (nombreExpresion != "" && stringCadena != "")
                             {
 
-                                if (ControladorEvaluador.Instancia.SimulateExpression(expressionName, strcadena))
+                                if (ControladorEvaluador.Instancia.SimulateExpression(nombreExpresion, stringCadena))
                                 {
-
-                                    consola.AppendText("* La Cadena " + strcadena + " de la Expresion " + expressionName + " fue Evaluada correctamente\n");
-                                    contenido = "<tr>\n" +
-                                       "     <td>" + "* La Cadena " + strcadena + " de la Expresion " + expressionName + " fue Evaluada correctamente\n" + "</td>\n" +
+                                    consola.AppendText("* La Cadena " + stringCadena + " de la Expresion " + nombreExpresion + " fue Evaluada correctamente\n");
+                                    stringContenido = "<tr>\n" +
+                                       "     <td>" + "* La Cadena " + stringCadena + " de la Expresion " + nombreExpresion + " fue Evaluada correctamente\n" + "</td>\n" +
                                        "</tr>";
-                                    cadena = cadena + contenido;
-                                    ControladorEvaluador.Instancia.ReporteTokenXML(appPath, expressionName + "-" + contador);
+                                    tBody = tBody + stringContenido;
+                                    ControladorEvaluador.Instancia.ReporteTokenXML(appPath, nombreExpresion + "-" + contador);
                                 }
-                                /*else if (EvaluatorController.Instancia.SimulateExpressionWhitString(expressionName, strcadena))
-                                {
-                                    consola.AppendText("* La Cadena " + strcadena + " de la Expresion " + expressionName + " fue Evaluada correctamente\n");
-                                }*/
                                 else
                                 {
                                     String error = ControladorEvaluador.Instancia.GetError();
                                     consola.AppendText(error);
-                                    contenido = "<tr>\n" +
+                                    stringContenido = "<tr>\n" +
                                        "     <td>" + error + "</td>\n" +
                                        "</tr>";
-                                    cadena = cadena + contenido;
-                                    ControladorEvaluador.Instancia.ReporteErrorXML(appPath, expressionName + "-" + contador);
+                                    tBody = tBody + stringContenido;
+                                    ControladorEvaluador.Instancia.ReporteErrorXML(appPath, nombreExpresion + "-" + contador);
                                 }
                                 contador++;
-
                             }
                             i = j;
                             break;
                         }
                     }
                 }
-
-
             }
 
-            string cadena2 = "<th scope =\"col\">Evaluación</th>\n";
-            ControladorReporte.Instancia.GetHTML("Consola" + fileName, cadena2, cadena, "Expresiones evaluadas en consola.");
+            string tHead = "<th scope =\"col\">Evaluación</th>\n";
+            ControladorReporte.Instancia.GetHTML("Consola" + fileName, tHead, tBody, "Expresiones evaluadas en consola.");
         }
 
         public void alertMessage(String mensaje)
@@ -450,6 +425,28 @@ namespace OLC1_Proyecto_1
                     this.pictureBox1.Image = System.Drawing.Image.FromFile(imagen1.Path + "\\" + imagen1.Nombre);
                 }
             }
+        }
+
+        private void acercaDeProyectoNo1ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Nombre: José Rafael Morente González\n" +
+                "Carnet: 201801237\n" +
+                "Curso:  Organización de Lenguajes y Compiladores 1\n" +
+                "Seccion: C", "Información del Estudiante",
+            MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void manualDeAplicaciónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //[OLC1]MU_Proyecto1_201801237
+            string appPath = Application.StartupPath + "\\[OLC1]MU_Proyecto1_201801237.pdf";
+            System.Diagnostics.Process.Start(appPath);
+        }
+
+        private void manualTécnicoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string appPath = Application.StartupPath + "\\[OLC1]MT_Proyecto1_201801237.pdf";
+            System.Diagnostics.Process.Start(appPath);
         }
     }
 }

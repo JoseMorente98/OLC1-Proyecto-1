@@ -100,35 +100,35 @@
             // nuevaPestañaToolStripMenuItem
             // 
             this.nuevaPestañaToolStripMenuItem.Name = "nuevaPestañaToolStripMenuItem";
-            this.nuevaPestañaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.nuevaPestañaToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
             this.nuevaPestañaToolStripMenuItem.Text = "Nueva Pestaña";
             this.nuevaPestañaToolStripMenuItem.Click += new System.EventHandler(this.nuevaPestañaToolStripMenuItem_Click);
             // 
             // abrirArchivoToolStripMenuItem
             // 
             this.abrirArchivoToolStripMenuItem.Name = "abrirArchivoToolStripMenuItem";
-            this.abrirArchivoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.abrirArchivoToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
             this.abrirArchivoToolStripMenuItem.Text = "Abrir Archivo";
             this.abrirArchivoToolStripMenuItem.Click += new System.EventHandler(this.abrirArchivoToolStripMenuItem_Click);
             // 
             // guardarArchivoToolStripMenuItem
             // 
             this.guardarArchivoToolStripMenuItem.Name = "guardarArchivoToolStripMenuItem";
-            this.guardarArchivoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.guardarArchivoToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
             this.guardarArchivoToolStripMenuItem.Text = "Guardar";
             this.guardarArchivoToolStripMenuItem.Click += new System.EventHandler(this.guardarArchivoToolStripMenuItem_Click);
             // 
             // guardarComoToolStripMenuItem
             // 
             this.guardarComoToolStripMenuItem.Name = "guardarComoToolStripMenuItem";
-            this.guardarComoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.guardarComoToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
             this.guardarComoToolStripMenuItem.Text = "Guardar Como";
             this.guardarComoToolStripMenuItem.Click += new System.EventHandler(this.guardarComoToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -188,18 +188,21 @@
             this.manualDeAplicaciónToolStripMenuItem.Name = "manualDeAplicaciónToolStripMenuItem";
             this.manualDeAplicaciónToolStripMenuItem.Size = new System.Drawing.Size(259, 26);
             this.manualDeAplicaciónToolStripMenuItem.Text = "Manual de Aplicación";
+            this.manualDeAplicaciónToolStripMenuItem.Click += new System.EventHandler(this.manualDeAplicaciónToolStripMenuItem_Click);
             // 
             // manualTécnicoToolStripMenuItem
             // 
             this.manualTécnicoToolStripMenuItem.Name = "manualTécnicoToolStripMenuItem";
             this.manualTécnicoToolStripMenuItem.Size = new System.Drawing.Size(259, 26);
             this.manualTécnicoToolStripMenuItem.Text = "Manual Técnico";
+            this.manualTécnicoToolStripMenuItem.Click += new System.EventHandler(this.manualTécnicoToolStripMenuItem_Click);
             // 
             // acercaDeProyectoNo1ToolStripMenuItem
             // 
             this.acercaDeProyectoNo1ToolStripMenuItem.Name = "acercaDeProyectoNo1ToolStripMenuItem";
             this.acercaDeProyectoNo1ToolStripMenuItem.Size = new System.Drawing.Size(259, 26);
             this.acercaDeProyectoNo1ToolStripMenuItem.Text = "Acerca de Proyecto No. 1";
+            this.acercaDeProyectoNo1ToolStripMenuItem.Click += new System.EventHandler(this.acercaDeProyectoNo1ToolStripMenuItem_Click);
             // 
             // tabControl1
             // 
@@ -338,8 +341,7 @@
             "Tabla de Transiciones",
             "Autómata Finito Determinista",
             "Token XML",
-            "Token Error XML"
-            });
+            "Token Error XML"});
             this.comboBox1.Location = new System.Drawing.Point(857, 116);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(300, 24);

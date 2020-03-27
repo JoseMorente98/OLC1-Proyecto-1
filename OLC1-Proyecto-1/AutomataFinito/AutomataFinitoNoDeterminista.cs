@@ -23,7 +23,6 @@ namespace OLC1_Proyecto_1.AutomataFinito
 
         public AutomataFinitoNoDeterminista()
         {
-
         }
 
         /**
@@ -39,25 +38,23 @@ namespace OLC1_Proyecto_1.AutomataFinito
                 switch (c)
                 {
                     case "*":
-                        Automata kleene = CerraduraKleene((Automata)pilaAFN.Pop());
-                        pilaAFN.Push(kleene);
-                        this.Afn = kleene;
+                        Automata automataKleene = CerraduraKleene((Automata)pilaAFN.Pop());
+                        pilaAFN.Push(automataKleene);
+                        this.Afn = automataKleene;
                         break;
                     case ".":
-                        Automata concat_param1 = (Automata)pilaAFN.Pop();
-                        Automata concat_param2 = (Automata)pilaAFN.Pop();
-
-                        Automata concat_result = Concatenacion(concat_param2, concat_param1);
-
-                        pilaAFN.Push(concat_result);
-                        this.Afn = concat_result;
+                        Automata concatenacionParametro = (Automata)pilaAFN.Pop();
+                        Automata concatenacionParametro2 = (Automata)pilaAFN.Pop();
+                        Automata automataConcatenacion = Concatenacion(concatenacionParametro2, concatenacionParametro);
+                        pilaAFN.Push(automataConcatenacion);
+                        this.Afn = automataConcatenacion;
                         break;
                     case "|":
-                        Automata union_param1 = (Automata)pilaAFN.Pop();
+                        Automata alternacionParametro = (Automata)pilaAFN.Pop();
                         Automata union_param2 = (Automata)pilaAFN.Pop();
-                        Automata union_result = Alternacion(union_param1, union_param2);
-                        pilaAFN.Push(union_result);
-                        this.Afn = union_result;
+                        Automata automataAlternacion = Alternacion(alternacionParametro, union_param2);
+                        pilaAFN.Push(automataAlternacion);
+                        this.Afn = automataAlternacion;
                         break;
                     case "?":
                         Automata s = SimpleAFN("ε");
