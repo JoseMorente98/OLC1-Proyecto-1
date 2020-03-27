@@ -60,7 +60,7 @@ namespace OLC1_Proyecto_1.Controlador
         /**
          * LIMPIAR CONJUNTOS 
          */
-        public void clearList()
+        public void Limpieza()
         {
             ArrayListConjuntos.Clear();
         }
@@ -76,7 +76,7 @@ namespace OLC1_Proyecto_1.Controlador
         /**
          * ENSAMBLAR CONJUNTOS
          */
-        public void assemble_Sets()
+        public void ArmarConjuntos()
         {
             bool isInterval = false;
             ArrayList arrayListTokens = ControladorToken.Instancia.ArrayListTokens;

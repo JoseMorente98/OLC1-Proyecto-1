@@ -56,7 +56,7 @@ namespace OLC1_Proyecto_1.Controlador
         /**
          * LIMPIAR ELEMENTOS 
          */
-        public void clearList()
+        public void Limpieza()
         {
             this.RaizArbol = null;
             this.Cantidad = 0;

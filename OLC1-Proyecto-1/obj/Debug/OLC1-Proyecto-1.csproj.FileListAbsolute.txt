@@ -14,4 +14,3 @@ C:\Users\josem\Documents\Universidad de San Carlos de Guatemala\USAC Semestre V\
 C:\Users\josem\Documents\Universidad de San Carlos de Guatemala\USAC Semestre V\USAC Organización de Lenguajes y Compiladores 1\OLC1-Proyecto-1\OLC1-Proyecto-1\obj\Debug\OLC1-Proyecto-1.csproj.CopyComplete
 C:\Users\josem\Documents\Universidad de San Carlos de Guatemala\USAC Semestre V\USAC Organización de Lenguajes y Compiladores 1\OLC1-Proyecto-1\OLC1-Proyecto-1\obj\Debug\OLC1-Proyecto-1.exe
 C:\Users\josem\Documents\Universidad de San Carlos de Guatemala\USAC Semestre V\USAC Organización de Lenguajes y Compiladores 1\OLC1-Proyecto-1\OLC1-Proyecto-1\obj\Debug\OLC1-Proyecto-1.pdb
-C:\Users\josem\Documents\Universidad de San Carlos de Guatemala\USAC Semestre V\USAC Organización de Lenguajes y Compiladores 1\OLC1-Proyecto-1\OLC1-Proyecto-1\obj\Debug\OLC1-Proyecto-1.csprojAssemblyReference.cache

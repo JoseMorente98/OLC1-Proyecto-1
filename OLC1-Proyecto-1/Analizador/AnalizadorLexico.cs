@@ -48,14 +48,13 @@ namespace OLC1_Proyecto_1.Analizador
                         else if (letra == '\n')
                         {
                             estado = 0;
-                            columna = 0;//COLUMNA 0
-                            fila++; //FILA INCREMENTA
+                            columna = 0;
+                            fila++;
 
                         }
                         //VERIFICA ESPACIOS EN BLANCO
                         else if (char.IsWhiteSpace(letra))
                         {
-                            //columna++;
                             estado = 0;
                             //VERIFICA SI VIENE NUMERO
                         }
@@ -64,13 +63,11 @@ namespace OLC1_Proyecto_1.Analizador
                             estado = 2;
                             stringAuxiliar += letra;
                         }
-
                         //VERIFICA SI ES PUNTUACION
                         else if (char.IsPunctuation(letra))
                         {
                             switch (letra)
                             {
-                                //ASCII
                                 case '!':
                                     ControladorToken.Instancia.AgregarToken(fila, columna - 1, letra.ToString(), "TK_Exclamacion");
                                     break;
@@ -164,7 +161,6 @@ namespace OLC1_Proyecto_1.Analizador
                                     estado = 5;
                                     stringAuxiliar += letra;
                                     break;
-                                /*SIMBOLOS ASCII*/
                                 case '#':
                                     ControladorToken.Instancia.AgregarToken(fila, columna - 1, letra.ToString(), "TK_Numeral");
                                     break;

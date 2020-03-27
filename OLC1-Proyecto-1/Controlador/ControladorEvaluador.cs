@@ -302,7 +302,7 @@ namespace OLC1_Proyecto_1.Controlador
         /**
          * LIMPIAR LISTA
          */
-        public void clearList()
+        public void Limpieza()
         {
             ArrayListAutomatas.Clear();
             ArrayListTokensEvaluados.Clear();

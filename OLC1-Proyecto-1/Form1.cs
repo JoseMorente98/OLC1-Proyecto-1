@@ -244,9 +244,9 @@ namespace OLC1_Proyecto_1
                 if (rtb.Text != "")
                 {
                     consola.Clear();
-                    ControladorConjunto.Instancia.clearList();
-                    ControladorNodo.Instancia.clearList();
-                    ControladorEvaluador.Instancia.clearList();
+                    ControladorConjunto.Instancia.Limpieza();
+                    ControladorNodo.Instancia.Limpieza();
+                    ControladorEvaluador.Instancia.Limpieza();
                     ControladorToken.Instancia.Limpieza();
                     AnalizadorLexico.Instancia.Scanner(rtb.Text);
                 }
@@ -256,8 +256,8 @@ namespace OLC1_Proyecto_1
                 }
             }
 
-            ControladorConjunto.Instancia.assemble_Sets();
-            ControladorExpresionRegular.Instancia.GetElements(Application.StartupPath);
+            ControladorConjunto.Instancia.ArmarConjuntos();
+            ControladorExpresionRegular.Instancia.ObtenerElementos(Application.StartupPath);
             EvaluarCadena();
         }
 

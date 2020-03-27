@@ -1,0 +1,17 @@
+C:\Users\josem\Documents\Universidad de San Carlos de Guatemala\USAC Semestre V\USAC Organización de Lenguajes y Compiladores 1\OLC1-Proyecto-1\OLC1-Proyecto-1\bin\Release\OLC1-Proyecto-1.exe.config
+C:\Users\josem\Documents\Universidad de San Carlos de Guatemala\USAC Semestre V\USAC Organización de Lenguajes y Compiladores 1\OLC1-Proyecto-1\OLC1-Proyecto-1\bin\Release\OLC1-Proyecto-1.exe
+C:\Users\josem\Documents\Universidad de San Carlos de Guatemala\USAC Semestre V\USAC Organización de Lenguajes y Compiladores 1\OLC1-Proyecto-1\OLC1-Proyecto-1\bin\Release\OLC1-Proyecto-1.pdb
+C:\Users\josem\Documents\Universidad de San Carlos de Guatemala\USAC Semestre V\USAC Organización de Lenguajes y Compiladores 1\OLC1-Proyecto-1\OLC1-Proyecto-1\bin\Release\FastColoredTextBox.dll
+C:\Users\josem\Documents\Universidad de San Carlos de Guatemala\USAC Semestre V\USAC Organización de Lenguajes y Compiladores 1\OLC1-Proyecto-1\OLC1-Proyecto-1\bin\Release\IronPdf.Assets.Rendering.Windows.dll
+C:\Users\josem\Documents\Universidad de San Carlos de Guatemala\USAC Semestre V\USAC Organización de Lenguajes y Compiladores 1\OLC1-Proyecto-1\OLC1-Proyecto-1\bin\Release\IronPdf.dll
+C:\Users\josem\Documents\Universidad de San Carlos de Guatemala\USAC Semestre V\USAC Organización de Lenguajes y Compiladores 1\OLC1-Proyecto-1\OLC1-Proyecto-1\bin\Release\MetroFramework.dll
+C:\Users\josem\Documents\Universidad de San Carlos de Guatemala\USAC Semestre V\USAC Organización de Lenguajes y Compiladores 1\OLC1-Proyecto-1\OLC1-Proyecto-1\bin\Release\MetroFramework.Fonts.dll
+C:\Users\josem\Documents\Universidad de San Carlos de Guatemala\USAC Semestre V\USAC Organización de Lenguajes y Compiladores 1\OLC1-Proyecto-1\OLC1-Proyecto-1\bin\Release\FastColoredTextBox.xml
+C:\Users\josem\Documents\Universidad de San Carlos de Guatemala\USAC Semestre V\USAC Organización de Lenguajes y Compiladores 1\OLC1-Proyecto-1\OLC1-Proyecto-1\bin\Release\IronPdf.xml
+C:\Users\josem\Documents\Universidad de San Carlos de Guatemala\USAC Semestre V\USAC Organización de Lenguajes y Compiladores 1\OLC1-Proyecto-1\OLC1-Proyecto-1\obj\Release\OLC1-Proyecto-1.csprojAssemblyReference.cache
+C:\Users\josem\Documents\Universidad de San Carlos de Guatemala\USAC Semestre V\USAC Organización de Lenguajes y Compiladores 1\OLC1-Proyecto-1\OLC1-Proyecto-1\obj\Release\OLC1_Proyecto_1.Form1.resources
+C:\Users\josem\Documents\Universidad de San Carlos de Guatemala\USAC Semestre V\USAC Organización de Lenguajes y Compiladores 1\OLC1-Proyecto-1\OLC1-Proyecto-1\obj\Release\OLC1_Proyecto_1.Properties.Resources.resources
+C:\Users\josem\Documents\Universidad de San Carlos de Guatemala\USAC Semestre V\USAC Organización de Lenguajes y Compiladores 1\OLC1-Proyecto-1\OLC1-Proyecto-1\obj\Release\OLC1-Proyecto-1.csproj.GenerateResource.cache
+C:\Users\josem\Documents\Universidad de San Carlos de Guatemala\USAC Semestre V\USAC Organización de Lenguajes y Compiladores 1\OLC1-Proyecto-1\OLC1-Proyecto-1\obj\Release\OLC1-Proyecto-1.csproj.CopyComplete
+C:\Users\josem\Documents\Universidad de San Carlos de Guatemala\USAC Semestre V\USAC Organización de Lenguajes y Compiladores 1\OLC1-Proyecto-1\OLC1-Proyecto-1\obj\Release\OLC1-Proyecto-1.exe
+C:\Users\josem\Documents\Universidad de San Carlos de Guatemala\USAC Semestre V\USAC Organización de Lenguajes y Compiladores 1\OLC1-Proyecto-1\OLC1-Proyecto-1\obj\Release\OLC1-Proyecto-1.pdb

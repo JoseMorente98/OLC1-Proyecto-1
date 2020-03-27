@@ -34,7 +34,7 @@ namespace OLC1_Proyecto_1.Controlador
         /**
          * OBTENER ELEMENTOS 
          */
-        public void GetElements(String path)
+        public void ObtenerElementos(String path)
         {
             String texto = "";
             ArrayList l = ControladorToken.Instancia.ArrayListTokens;
