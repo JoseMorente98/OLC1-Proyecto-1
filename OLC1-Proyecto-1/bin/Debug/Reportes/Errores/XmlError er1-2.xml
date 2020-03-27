@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ListaErrores>
+  <Error>
+    <Nombre>TK_1</Nombre>
+    <Valor>1</Valor>
+    <Fila>0</Fila>
+    <Columna>0</Columna>
+  </Error>
+  <Error>
+    <Nombre>TK_u</Nombre>
+    <Valor>u</Valor>
+    <Fila>0</Fila>
+    <Columna>1</Columna>
+  </Error>
+  <Error>
+    <Nombre>TK_n</Nombre>
+    <Valor>n</Valor>
+    <Fila>0</Fila>
+    <Columna>2</Columna>
+  </Error>
+  <Error>
+    <Nombre>TK_o</Nombre>
+    <Valor>o</Valor>
+    <Fila>0</Fila>
+    <Columna>3</Columna>
+  </Error>
+</ListaErrores>

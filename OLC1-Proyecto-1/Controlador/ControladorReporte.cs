@@ -27,7 +27,7 @@ namespace OLC1_Proyecto_1.Controlador
          * REPORTE DE TOKEN 
          */
         #region REPORTE DE TOKEN
-        public void GetReportTokens()
+        public void GetReportTokens(String nombre)
         {
             string tbody = "";
             string content = "";
@@ -58,7 +58,7 @@ namespace OLC1_Proyecto_1.Controlador
             "<th scope=\"col\">Descripcion</th>" +
             "<th scope=\"col\">Fila</th>\n" +
             "<th scope=\"col\">Columna</th>";
-            GetHTML("Tokens", thead, tbody, "Listado de Tokens detectados por el analizador");
+            GetHTML("Tokens" + nombre, thead, tbody, "Listado de Tokens detectados por el analizador");
         }
         #endregion
 
@@ -66,7 +66,7 @@ namespace OLC1_Proyecto_1.Controlador
          * REPORTE DE TOKEN ERROR
          */
         #region REPORTE DE TOKEN ERROR
-        public void GetReportTokensError()
+        public void GetReportTokensError(String nombre)
         {
             string tbody = "";
             string content = "";
@@ -86,7 +86,7 @@ namespace OLC1_Proyecto_1.Controlador
             "<th scope=\"col\">Descripcion</th>\n" +
             "<th scope=\"col\">Fila</th>\n" +
             "<th scope=\"col\">Columna</th>";
-            GetHTML("Tokens Error", thead, tbody, "Listado de Tokens Error detectados por el analizador");
+            GetHTML("Tokens Error" + nombre, thead, tbody, "Listado de Tokens Error detectados por el analizador");
         }
         #endregion
         

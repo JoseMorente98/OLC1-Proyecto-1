@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ListaErrores>
+  <Error>
+    <Nombre>TK_2</Nombre>
+    <Valor>2</Valor>
+    <Fila>0</Fila>
+    <Columna>0</Columna>
+  </Error>
+  <Error>
+    <Nombre>TK_#</Nombre>
+    <Valor>#</Valor>
+    <Fila>0</Fila>
+    <Columna>1</Columna>
+  </Error>
+  <Error>
+    <Nombre>TK_1</Nombre>
+    <Valor>1</Valor>
+    <Fila>0</Fila>
+    <Columna>2</Columna>
+  </Error>
+  <Error>
+    <Nombre>TK_4</Nombre>
+    <Valor>4</Valor>
+    <Fila>0</Fila>
+    <Columna>3</Columna>
+  </Error>
+  <Error>
+    <Nombre>TK_3</Nombre>
+    <Valor>3</Valor>
+    <Fila>0</Fila>
+    <Columna>4</Columna>
+  </Error>
+  <Error>
+    <Nombre>TK_E</Nombre>
+    <Valor>E</Valor>
+    <Fila>0</Fila>
+    <Columna>5</Columna>
+  </Error>
+  <Error>
+    <Nombre>TK_A</Nombre>
+    <Valor>A</Valor>
+    <Fila>0</Fila>
+    <Columna>6</Columna>
+  </Error>
+</ListaErrores>

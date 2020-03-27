@@ -227,12 +227,12 @@ namespace OLC1_Proyecto_1
 
         private void reporteDeTokensToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            ControladorReporte.Instancia.GetReportTokens();
+            ControladorReporte.Instancia.GetReportTokens(fileName);
         }
 
         private void reporteDeErrorToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            ControladorReporte.Instancia.GetReportTokensError();
+            ControladorReporte.Instancia.GetReportTokensError(fileName);
         }
 
         private void metroButton1_Click(object sender, EventArgs e)
