@@ -249,6 +249,7 @@ namespace OLC1_Proyecto_1
                     ControladorEvaluador.Instancia.Limpieza();
                     ControladorToken.Instancia.Limpieza();
                     AnalizadorLexico.Instancia.Scanner(rtb.Text);
+
                 }
                 else
                 {

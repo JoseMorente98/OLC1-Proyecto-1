@@ -1,0 +1,90 @@
+digraph TablaTransicion {
+
+	graph [rankdir=LR, label="Tabla de Transicion er2", labelloc=t, fontsize=30, pad=0.5, nodesep=0.5, ranksep=2];
+
+	node[shape=none];
+
+	table[label =<
+  <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0"> 
+<TR>
+	<TD width="75">-</TD>
+	<TD width="75">c</TD>
+	<TD width="75">a</TD>
+	<TD width="75">b</TD>
+	<TD width="75">d</TD>
+</TR>
+
+<TR>
+	<TD width="75">0</TD>
+	<TD width="75">1</TD>
+	<TD width="75">2</TD>
+	<TD width="75">3</TD>
+	<TD width="75">-</TD>
+</TR>
+
+<TR>
+	<TD width="75">1</TD>
+	<TD width="75">-</TD>
+	<TD width="75">-</TD>
+	<TD width="75">-</TD>
+	<TD width="75">4</TD>
+</TR>
+
+<TR>
+	<TD width="75">2</TD>
+	<TD width="75">-</TD>
+	<TD width="75">-</TD>
+	<TD width="75">5</TD>
+	<TD width="75">-</TD>
+</TR>
+
+<TR>
+	<TD width="75">3</TD>
+	<TD width="75">6</TD>
+	<TD width="75">-</TD>
+	<TD width="75">-</TD>
+	<TD width="75">-</TD>
+</TR>
+
+<TR>
+	<TD width="75">4</TD>
+	<TD width="75">1</TD>
+	<TD width="75">2</TD>
+	<TD width="75">3</TD>
+	<TD width="75">-</TD>
+</TR>
+
+<TR>
+	<TD width="75">5</TD>
+	<TD width="75">1</TD>
+	<TD width="75">2</TD>
+	<TD width="75">3</TD>
+	<TD width="75">-</TD>
+</TR>
+
+<TR>
+	<TD width="75">6</TD>
+	<TD width="75">-</TD>
+	<TD width="75">-</TD>
+	<TD width="75">-</TD>
+	<TD width="75">7#</TD>
+</TR>
+
+<TR>
+	<TD width="75">7</TD>
+	<TD width="75">-</TD>
+	<TD width="75">-</TD>
+	<TD width="75">-</TD>
+	<TD width="75">8#</TD>
+</TR>
+
+<TR>
+	<TD width="75">8</TD>
+	<TD width="75">-</TD>
+	<TD width="75">-</TD>
+	<TD width="75">-</TD>
+	<TD width="75">8#</TD>
+</TR>
+
+</TABLE>>];
+}

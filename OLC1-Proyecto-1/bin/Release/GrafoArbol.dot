@@ -1,0 +1,37 @@
+digraph ArbolNodo{
+rankdir=TB;
+node [shape = record, style=filled, fillcolor=white];
+nodo351 [ label ="1,3,5|.\lF|8"];
+nodo349 [ label ="1,3,5|.\lF|7"];
+nodo348 [ label ="1,3,5|.\lF|6"];
+nodo347 [ label ="1,3,5|.\lF|5"];
+nodo346 [ label ="1,3|*\lV|2,4"];
+nodo345 [ label ="1,3|or\lF|2,4"];
+nodo344 [ label ="1|.\lF|2"];
+nodo343 [ label ="1| c \lF|1"];
+nodo344->nodo343
+nodo342 [ label ="2| d \lF|2"];
+nodo344->nodo342
+nodo345->nodo344
+nodo341 [ label ="3|.\lF|4"];
+nodo340 [ label ="3| a \lF|3"];
+nodo341->nodo340
+nodo339 [ label ="4| b \lF|4"];
+nodo341->nodo339
+nodo345->nodo341
+nodo346->nodo345
+nodo347->nodo346
+nodo338 [ label ="5| b \lF|5"];
+nodo347->nodo338
+nodo348->nodo347
+nodo337 [ label ="6| c \lF|6"];
+nodo348->nodo337
+nodo349->nodo348
+nodo336 [ label ="7|+\lF|7"];
+nodo335 [ label ="7| d \lF|7"];
+nodo336->nodo335
+nodo349->nodo336
+nodo351->nodo349
+nodo350 [ label ="8|#\lF|8"];
+nodo351->nodo350
+}

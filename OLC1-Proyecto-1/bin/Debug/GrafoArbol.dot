@@ -1,0 +1,23 @@
+digraph ArbolNodo{
+rankdir=TB;
+node [shape = record, style=filled, fillcolor=white];
+nodo20 [ label ="0,9,10|.\lF|10"];
+nodo18 [ label ="0,9|*\lV|0,9"];
+nodo17 [ label ="0,8,9|or\lF|0,8,9"];
+nodo16 [ label ="6,7,8|or\lF|6,7,8"];
+nodo15 [ label ="6,7|or\lF|6,7"];
+nodo14 [ label ="6|todo\lF|6"];
+nodo15->nodo14
+nodo13 [ label ="7| \n \lF|7"];
+nodo15->nodo13
+nodo16->nodo15
+nodo12 [ label ="8| \r \lF|8"];
+nodo16->nodo12
+nodo17->nodo16
+nodo11 [ label ="9| \t \lF|9"];
+nodo17->nodo11
+nodo18->nodo17
+nodo20->nodo18
+nodo19 [ label ="10|#\lF|10"];
+nodo20->nodo19
+}

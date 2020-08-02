@@ -161,8 +161,9 @@ namespace OLC1_Proyecto_1.Controlador
 
             //GUARDA EL AUTOMATA PARA EVALUAR
             ControladorEvaluador.Instancia.Agregar(nombre, afd_trampa);
-            
+
             //LIMPIAR ARBOL
+            ControladorNodo.Instancia.Limpieza();
         }
 
     }

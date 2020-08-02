@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ListaErrores>
+  <Error>
+    <Nombre>Carcter_b</Nombre>
+    <Valor>b</Valor>
+    <Fila>0</Fila>
+    <Columna>1</Columna>
+  </Error>
+</ListaErrores>

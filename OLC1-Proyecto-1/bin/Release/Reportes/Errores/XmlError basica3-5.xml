@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ListaErrores>
+  <Error>
+    <Nombre>TK_a</Nombre>
+    <Valor>a</Valor>
+    <Fila>0</Fila>
+    <Columna>1</Columna>
+  </Error>
+  <Error>
+    <Nombre>TK_a</Nombre>
+    <Valor>a</Valor>
+    <Fila>0</Fila>
+    <Columna>2</Columna>
+  </Error>
+  <Error>
+    <Nombre>TK_a</Nombre>
+    <Valor>a</Valor>
+    <Fila>0</Fila>
+    <Columna>3</Columna>
+  </Error>
+</ListaErrores>
